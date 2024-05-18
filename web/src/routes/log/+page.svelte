@@ -16,8 +16,8 @@
 </svg>
 log.</span><br/>thoughts and feelings.</p>
 </div>
-<div class="min-h-[60vh] flex justify-center items-center p-20">
-      <div class="flex border-2	border-black py-4">
+<div class="min-h-[60vh] flex justify-center items-start">
+      <div class="flex flex-col border-2	border-black py-4">
       {#each data.posts as post}
       <img class="h-28 px-4" src="{post.coverImageURL}" alt="cover image of { post.title}"/>
       <div class="px-4 flex flex-col justify-between">
