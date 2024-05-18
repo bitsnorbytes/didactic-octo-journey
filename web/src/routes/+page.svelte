@@ -1,5 +1,5 @@
 <div class="mt-[5vh] h-[60vh] flex justify-center items-center p-10">
-<p class="tracking-widest text-4xl"><span class="text-2xl font-semibold">my name is punyasloka.</span><br/>site reliability engineer, hobbyist designer,<br/>cinema curator.</p>
+<p class="tracking-widest text-4xl"><span class="text-2xl font-semibold">i am punyasloka.</span><br/>site reliability engineer, hobbyist designer,<br/>cinema curator for friends.</p>
 </div>
 <div class="h-[30vh] flex justify-center items-center p-20">
     <p class="tracking-widest text-xl text-sans">updates in progress.</p>
