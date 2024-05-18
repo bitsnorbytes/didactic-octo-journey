@@ -1,0 +1,68 @@
+name: webUI - Build
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+      - 'feature/**'
+    paths:
+      - 'web/**'
+
+jobs:
+  build:
+    name: 'Build - UI'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+     
+      - name: Install NPM dependencies
+        run: npm install
+        working-directory: web
+
+      - name: Build UI
+        run: npm run build
+        working-directory: web
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: |
+            web/build
+            !web/build/**/*.md
+        
+
+  deploy:
+    name: 'Deploy UI'
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+
+      - name: Install Az SWA CLI
+        run: npm install -g @azure/static-web-apps-cli
+
+      - name: Deploy UI
+        run: |
+          swa deploy static \
+          --api-location server \
+          --env production \
+          --api-language "node" \
+          --api-version "18" \
+          --deployment-token ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }} \
+          -name squirrel-esque
