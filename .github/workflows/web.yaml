@@ -6,6 +6,7 @@ on:
       - main
       - 'releases/**'
       - 'feature/**'
+      - 'phase*/**'
     paths:
       - 'web/**'
 
