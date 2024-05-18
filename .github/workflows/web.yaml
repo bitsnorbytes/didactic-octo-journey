@@ -10,6 +10,12 @@ on:
     paths:
       - 'web/**'
 
+env:
+  # Setting an environment variable with the value of a configuration variable
+  PROJECT_ID: ${{ vars.PROJECT_ID }}
+  DATASET: ${{ vars.DATASET }}
+  API_VERSION: ${{ vars.API_VERSION }}
+  
 jobs:
   build:
     name: 'Build - UI'
