@@ -1,9 +1,13 @@
 import {createClient} from "@sanity/client";
-import { projectId,dataset,apiVersion } from "$lib/server/secrets";
+// import { projectId,dataset,apiVersion } from "$lib/server/secrets";
+import { env } from "$env/dynamic/private";
+// export const projectId = env.PROJECT_ID;
+// export const dataset = env.DATASET;
+// export const apiVersion = env.API_VERSION;
 const client = createClient({
-  projectId: projectId,
-  dataset: dataset,
-  apiVersion: apiVersion,
+  projectId: env.PROJECT_ID,
+  dataset: env.DATASET,
+  apiVersion: env.API_VERSION,
   useCdn: false
 });
 export async function load({ params }) {
