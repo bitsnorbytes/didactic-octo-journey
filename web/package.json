@@ -26,5 +26,8 @@
 	"type": "module",
 	"engines": {
 		"node": ">=18.13 <19"
+	},
+	"dependencies": {
+		"@sanity/client": "^6.18.2"
 	}
 }
