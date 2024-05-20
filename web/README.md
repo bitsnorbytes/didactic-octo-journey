@@ -1,3 +1,5 @@
 # pysl 0.0
 
-I am punyasloka. This is my personal website. built with [`svelte`](https://svelte.dev/).
+I am punyasloka. This is my personal website. built with [`svelte`](https://svelte.dev/).  
+
+[`pysl-xyz`](https://pysl.xyz)
