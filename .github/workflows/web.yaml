@@ -12,9 +12,9 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  PROJECT_ID: ${{ vars.PROJECT_ID }}
-  DATASET: ${{ vars.DATASET }}
-  API_VERSION: ${{ vars.API_VERSION }}
+  PUBLIC_PROJECT_ID: ${{ vars.PUBLIC_PROJECT_ID }}
+  PUBLIC_DATASET: ${{ vars.PUBLIC_DATASET }}
+  PUBLIC_API_VERSION: ${{ vars.PUBLIC_API_VERSION }}
   
 jobs:
   build:
